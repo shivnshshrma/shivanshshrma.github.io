@@ -3,9 +3,25 @@
 const GITHUB_USERNAME = 'shivnshshrma';
 const GITHUB_API_BASE = 'https://api.github.com';
 
-// You can optionally add a GitHub Personal Access Token for higher rate limits
-// Create one at: https://github.com/settings/tokens
-const GITHUB_TOKEN = ''; // Leave empty if not using
+// Load GitHub Token from environment
+let GITHUB_TOKEN = '';
+
+// Fetch token from .env file
+async function loadEnv() {
+    try {
+        const response = await fetch('.env');
+        const text = await response.text();
+        const lines = text.split('\n');
+        for (const line of lines) {
+            if (line.startsWith('GITHUB_TOKEN=')) {
+                GITHUB_TOKEN = line.replace('GITHUB_TOKEN=', '').trim();
+                break;
+            }
+        }
+    } catch (error) {
+        console.warn('Could not load .env file. Using public API with rate limits.');
+    }
+}
 
 const headers = GITHUB_TOKEN ? {
     'Authorization': `token ${GITHUB_TOKEN}`
@@ -269,6 +285,7 @@ async function loadGitHubStats() {
 }
 
 // Initialize when page loads
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadEnv();
     loadGitHubStats();
 });
