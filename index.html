@@ -76,44 +76,121 @@
       </div>
     </section>
 
-    <!-- ---------- Profiles / stats ----------
-         Enter your handles in script.js (the STATS object).
-         GitHub + Codeforces refresh live; AtCoder is set manually. -->
+    <!-- ---------- GitHub Statistics ---------- -->
     <section id="stats" class="section stats-section">
-      <p class="eyebrow reveal">// profiles</p>
-      <div class="stats-grid">
+      <div class="gh-dashboard reveal">
+        <h2 class="gh-dashboard-title">
+          <svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub Statistics
+        </h2>
+        <div class="gh-divider"></div>
 
-        <a class="stat-card reveal" data-platform="github"
-           href="https://github.com/shivnshshrma" target="_blank" rel="noopener">
-          <span class="stat-platform">GitHub</span>
-          <span class="stat-handle">@<span data-stat="handle">shivnshshrma</span></span>
-          <div class="stat-figures">
-            <div class="stat"><span class="stat-num" data-stat="prs">—</span><span class="stat-label">PRs</span></div>
-            <div class="stat"><span class="stat-num" data-stat="repos">—</span><span class="stat-label">repos</span></div>
-            <div class="stat"><span class="stat-num" data-stat="stars">—</span><span class="stat-label">stars</span></div>
+        <!-- Stat cards 3 × 2 -->
+        <div class="gh-stat-grid">
+          <div class="gh-stat-card">
+            <svg class="gh-stat-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            <span class="gh-stat-value" id="gh-repos">—</span>
+            <span class="gh-stat-label">PUBLIC REPOSITORIES</span>
           </div>
-        </a>
-
-        <a class="stat-card reveal" data-platform="codeforces"
-           href="https://codeforces.com/profile/shivnshshrma" target="_blank" rel="noopener">
-          <span class="stat-platform">Codeforces</span>
-          <span class="stat-handle">@<span data-stat="handle">shivnshshrma</span> · <span class="stat-tier" data-stat="rank">—</span></span>
-          <div class="stat-figures">
-            <div class="stat"><span class="stat-num" data-stat="rating">—</span><span class="stat-label">rating</span></div>
-            <div class="stat"><span class="stat-num" data-stat="max">—</span><span class="stat-label">max</span></div>
+          <div class="gh-stat-card">
+            <svg class="gh-stat-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span class="gh-stat-value" id="gh-stars">—</span>
+            <span class="gh-stat-label">TOTAL STARS</span>
           </div>
-        </a>
-
-        <a class="stat-card reveal" data-platform="atcoder"
-           href="https://atcoder.jp/users/shivanshshrma" target="_blank" rel="noopener">
-          <span class="stat-platform">AtCoder</span>
-          <span class="stat-handle">@<span data-stat="handle">shivanshshrma</span> · <span class="stat-tier" data-stat="tier">—</span></span>
-          <div class="stat-figures">
-            <div class="stat"><span class="stat-num" data-stat="rating">—</span><span class="stat-label">rating</span></div>
-            <div class="stat"><span class="stat-num" data-stat="contests">—</span><span class="stat-label">contests</span></div>
+          <div class="gh-stat-card">
+            <svg class="gh-stat-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><path d="M6 9v12"/></svg>
+            <span class="gh-stat-value" id="gh-prs">—</span>
+            <span class="gh-stat-label">PULL REQUESTS</span>
           </div>
-        </a>
+          <div class="gh-stat-card">
+            <svg class="gh-stat-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="gh-stat-value" id="gh-merged">—</span>
+            <span class="gh-stat-label">MERGED PRS</span>
+          </div>
+          <div class="gh-stat-card">
+            <svg class="gh-stat-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M5.64 5.64l2.12 2.12M16.24 16.24l2.12 2.12M3 12h3M18 12h3M5.64 18.36l2.12-2.12M16.24 7.76l2.12-2.12"/></svg>
+            <span class="gh-stat-value" id="gh-followers">—</span>
+            <span class="gh-stat-label">FOLLOWERS</span>
+          </div>
+          <div class="gh-stat-card">
+            <svg class="gh-stat-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            <span class="gh-stat-value" id="gh-contributions">—</span>
+            <span class="gh-stat-label">CONTRIBUTIONS (YR)</span>
+          </div>
+        </div>
 
+        <!-- Contribution heatmap -->
+        <div class="gh-contrib">
+          <h3 class="gh-sub-title">Contribution Activity</h3>
+          <div class="gh-contrib-graph">
+            <img id="gh-heatmap" src="https://ghchart.rshah.org/0f7a55/shivnshshrma" alt="GitHub contribution graph for shivnshshrma" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Recent activity -->
+        <div class="gh-activity">
+          <h3 class="gh-sub-title">Recent Activity</h3>
+          <div id="gh-activity-list" class="gh-activity-list">
+            <p class="gh-activity-loading">Loading activity…</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- Competitive Programming ---------- -->
+    <section id="cp-stats" class="section cp-section">
+      <div class="cp-dashboard reveal">
+        <h2 class="gh-dashboard-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          Competitive Programming
+        </h2>
+        <div class="gh-divider"></div>
+
+        <div class="cp-cards">
+          <a class="cp-card" data-platform="codeforces"
+             href="https://codeforces.com/profile/shivnshshrma" target="_blank" rel="noopener">
+            <div class="cp-card-header">
+              <span class="cp-card-platform">Codeforces</span>
+              <span class="cp-card-handle">@<span data-stat="handle">shivnshshrma</span></span>
+            </div>
+            <div class="cp-card-stats">
+              <div class="cp-stat">
+                <span class="cp-stat-value" data-stat="rating">—</span>
+                <span class="cp-stat-label">RATING</span>
+              </div>
+              <div class="cp-stat">
+                <span class="cp-stat-value" data-stat="max">—</span>
+                <span class="cp-stat-label">MAX RATING</span>
+              </div>
+              <div class="cp-stat">
+                <span class="cp-stat-value cp-rank-badge" data-stat="rank">—</span>
+                <span class="cp-stat-label">RANK</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="cp-card" data-platform="atcoder"
+             href="https://atcoder.jp/users/shivanshshrma" target="_blank" rel="noopener">
+            <div class="cp-card-header">
+              <span class="cp-card-platform">AtCoder</span>
+              <span class="cp-card-handle">@<span data-stat="handle">shivanshshrma</span></span>
+            </div>
+            <div class="cp-card-stats">
+              <div class="cp-stat">
+                <span class="cp-stat-value" data-stat="rating">—</span>
+                <span class="cp-stat-label">RATING</span>
+              </div>
+              <div class="cp-stat">
+                <span class="cp-stat-value" data-stat="contests">—</span>
+                <span class="cp-stat-label">CONTESTS</span>
+              </div>
+              <div class="cp-stat">
+                <span class="cp-stat-value cp-rank-badge" data-stat="tier">—</span>
+                <span class="cp-stat-label">TIER</span>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 

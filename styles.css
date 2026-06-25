@@ -412,73 +412,261 @@ h1, h2, h3, h4 {
   font-size: 0.85rem;
 }
 
-/* ---------- Profiles / stats ---------- */
+/* ---------- GitHub Dashboard ---------- */
 .stats-section {
-  padding-block-start: 0; /* sits close under the hero */
+  padding-block-start: 0;
 }
 
 #projects.section {
-  padding-block-start: 0; /* sits close under experience */
+  padding-block-start: 0;
 }
 
-.stats-grid {
+.cp-section {
+  padding-block-start: 0;
+}
+
+.gh-dashboard,
+.cp-dashboard {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.gh-dashboard-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.gh-divider {
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin: 1rem 0 1.75rem;
+}
+
+/* --- 3×2 stat cards --- */
+.gh-stat-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-.stat-card {
+.gh-stat-card {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
-  padding: 1.5rem;
-  background: var(--surface);
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1.4rem 1rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
 }
 
-.stat-card:hover,
-.stat-card:focus-visible {
+.gh-stat-card:hover {
   border-color: var(--accent);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
-.stat-platform {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.05rem;
-}
-
-.stat-handle {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+.gh-stat-icon {
   color: var(--muted);
+  margin-bottom: 0.35rem;
 }
 
-.stat-tier {
-  color: var(--accent);
-}
-
-.stat-figures {
-  display: flex;
-  gap: 1.75rem;
-  margin-top: 0.85rem;
-}
-
-.stat-num {
-  display: block;
+.gh-stat-value {
   font-family: var(--font-display);
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.02em;
 }
 
-.stat-label {
+.gh-stat-label {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
   color: var(--muted);
+  text-align: center;
+}
+
+/* --- Contribution heatmap --- */
+.gh-contrib {
+  margin-bottom: 2rem;
+}
+
+.gh-sub-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.gh-contrib-graph {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  overflow-x: auto;
+}
+
+.gh-contrib-graph img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Invert the heatmap in dark mode so it stays readable */
+:root[data-theme="dark"] .gh-contrib-graph img {
+  filter: invert(1) hue-rotate(180deg);
+  opacity: 0.85;
+}
+
+/* --- Recent activity feed --- */
+.gh-activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.gh-activity-loading {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.gh-event {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-bottom: 0.5rem;
+  transition: border-color 0.2s var(--ease);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.gh-event::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent);
+  border-radius: 3px 0 0 3px;
+}
+
+.gh-event:hover {
+  border-color: var(--accent);
+}
+
+.gh-event-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--ink);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.45rem;
+}
+
+.gh-event-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.gh-event-text {
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.gh-event-text strong {
+  font-weight: 600;
+}
+
+.gh-event-time {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+
+/* --- Competitive Programming cards --- */
+.cp-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.cp-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.cp-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.cp-card-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.cp-card-platform {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.cp-card-handle {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.cp-card-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.cp-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.cp-stat-value {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.cp-stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.cp-rank-badge {
+  font-size: 1rem;
+  color: var(--accent);
 }
 
 /* ---------- 8. Contact ---------- */
@@ -617,8 +805,16 @@ h1, h2, h3, h4 {
     gap: 2rem;
   }
 
-  .stats-grid {
+  .gh-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cp-cards {
     grid-template-columns: 1fr;
+  }
+
+  .cp-card-stats {
+    gap: 1.25rem;
   }
 
   .project:hover {
