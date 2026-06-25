@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-stats",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio site + /api/stats serverless function (GitHub, Codeforces, AtCoder)",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "refresh": "node scripts/fetch-stats.js"
+  },
+  "dependencies": {
+    "@qatadaazzeh/atcoder-api": "1.0.1"
+  }
+}

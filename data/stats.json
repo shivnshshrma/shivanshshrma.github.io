@@ -1,0 +1,23 @@
+{
+  "updatedAt": "2026-06-25T15:53:27.187Z",
+  "handles": {
+    "github": "shivnshshrma",
+    "codeforces": "shivnshshrma",
+    "atcoder": "shivanshshrma"
+  },
+  "github": {
+    "prs": 19,
+    "repos": 43,
+    "stars": 1,
+    "followers": 0
+  },
+  "codeforces": {
+    "rating": 947,
+    "max": 1008,
+    "rank": "Newbie"
+  },
+  "atcoder": {
+    "rating": 45,
+    "contests": 6
+  }
+}

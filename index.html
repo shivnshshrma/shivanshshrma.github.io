@@ -1,266 +1,314 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shivansh Kumar</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="achievements.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Apply a saved theme before paint to avoid a flash. Default stays light. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light")
+          document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- ============================================================
+       ONLY 4 THINGS LEFT TO FILL IN (not in your resume):
+       1. Your name  -> replace every "Your Name" (here, <title>, footer)
+       2. Your email -> replace hello@example.com in #contact
+       3. GitHub + LinkedIn URLs -> the href="#" in .socials
+       4. Project links -> the href="#" on each project title (optional)
+       Everything else is pulled from your resume — edit freely.
+  ============================================================ -->
+
+  <title>Shivansh Kumar — Software Developer</title>
+  <meta name="description" content="Software developer building reliable Python backends, REST APIs, and financial automation. Open to new roles." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <header>
-        <h1>Shivansh Kumar</h1>
-        <section id="Contact me">
-            <a href="https://github.com/shivnshshrma" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/shivanshshrma/" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="mailto:shivanshshrma@proton.me" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-envelope"></i> Email
-            </a>
-        </section>
-    </header>
+  <header class="site-header">
+    <a href="#top" class="brand">Shivansh Kumar</a>
 
-    <nav class="timeline-nav">
-        <div class="timeline-line"></div>
-        <a href="#about" class="timeline-item"><span>About Me</span></a>
-        <a href="#experience" class="timeline-item"><span>Experience</span></a>
-        <a href="#projects" class="timeline-item"><span>Projects</span></a>
-        <a href="#skills" class="timeline-item"><span>Skills</span></a>
-        <a href="#education" class="timeline-item"><span>Education</span></a>
-        <a href="#achievements" class="timeline-item"><span>Achievements</span></a>
-    </nav>
+    <div class="header-right">
+      <nav id="nav" class="nav">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I'm a DevOps Engineer passionate about building scalable, resilient infrastructure that empowers
-                development teams to ship faster and more reliably. With expertise in cloud platforms (AWS, GCP),
-                containerization, and CI/CD automation, I bridge the gap between development and operations to create
-                seamless deployment pipelines.</p>
-            <p>My approach centers on infrastructure-as-code, automated testing, and continuous improvement. I believe
-                in treating infrastructure with the same rigor as application code—version-controlled, tested, and
-                reproducible. Whether it's optimizing cloud costs, reducing deployment times, or ensuring 99.9% uptime,
-                I thrive on solving complex distributed systems challenges that directly impact business outcomes.</p>
-        </section>
-        <section id="experience">
-            <h2>Experience</h2>
-            <h3>GXCO Tech Pvt. Ltd.</h3>
-            <p><strong>Software Developer (Remote)</strong> | July 2024 - Present</p>
-            <ul>
-                <li>Designed and built the financial core of NGOERP using Python, JavaScript, and Frappe, creating a
-                    multi-level approval workflow that reduced expense processing time by 40%.</li>
-                <li>Automated the entire reimbursement cycle, enabling the system to auto-route approved vendor and
-                    employee payments to the bank, successfully eliminating manual data-entry errors.</li>
-                <li>Engineered a custom <b>Leave Allocation Algorithm</b> that replaced spreadsheet tracking, ensuring
-                    100%
-                    accuracy in leave accruals for over 100 employees based on dynamic organizational policies.</li>
-                <li>Managed SQL databases directly to resolve critical data inconsistencies and generate custom
-                    financial reports that the standard ERP tools could not provide.</li>
-                <li>Streamlined the deployment process by implementing CI/CD pipelines, which cut release times by 30%
-                    and allowed the team to deliver features faster and more reliably.</li>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode">
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ---------- Hero ---------- -->
+    <section class="hero section">
+      <p class="eyebrow reveal">// software developer</p>
+      <h1 class="hero-title reveal">
+        I build software that<br />handles real money — reliably.<span class="cursor" aria-hidden="true"></span>
+      </h1>
+      <p class="hero-intro reveal">
+        I'm Shivansh Kumar — a software developer who builds Python backends, REST APIs,
+        and financial automation that runs live transactions. I think hard about
+        reliability, distributed systems, and how things fail at scale. Google- and
+        Oracle-certified in cloud, and open to new roles.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#experience" class="btn btn-primary">View experience</a>
+        <a href="#projects" class="btn btn-ghost">View projects</a>
+      </div>
+    </section>
+
+    <!-- ---------- Profiles / stats ----------
+         Enter your handles in script.js (the STATS object).
+         GitHub + Codeforces refresh live; AtCoder is set manually. -->
+    <section id="stats" class="section stats-section">
+      <p class="eyebrow reveal">// profiles</p>
+      <div class="stats-grid">
+
+        <a class="stat-card reveal" data-platform="github"
+           href="https://github.com/shivnshshrma" target="_blank" rel="noopener">
+          <span class="stat-platform">GitHub</span>
+          <span class="stat-handle">@<span data-stat="handle">shivnshshrma</span></span>
+          <div class="stat-figures">
+            <div class="stat"><span class="stat-num" data-stat="prs">—</span><span class="stat-label">PRs</span></div>
+            <div class="stat"><span class="stat-num" data-stat="repos">—</span><span class="stat-label">repos</span></div>
+            <div class="stat"><span class="stat-num" data-stat="stars">—</span><span class="stat-label">stars</span></div>
+          </div>
+        </a>
+
+        <a class="stat-card reveal" data-platform="codeforces"
+           href="https://codeforces.com/profile/shivnshshrma" target="_blank" rel="noopener">
+          <span class="stat-platform">Codeforces</span>
+          <span class="stat-handle">@<span data-stat="handle">shivnshshrma</span> · <span class="stat-tier" data-stat="rank">—</span></span>
+          <div class="stat-figures">
+            <div class="stat"><span class="stat-num" data-stat="rating">—</span><span class="stat-label">rating</span></div>
+            <div class="stat"><span class="stat-num" data-stat="max">—</span><span class="stat-label">max</span></div>
+          </div>
+        </a>
+
+        <a class="stat-card reveal" data-platform="atcoder"
+           href="https://atcoder.jp/users/shivanshshrma" target="_blank" rel="noopener">
+          <span class="stat-platform">AtCoder</span>
+          <span class="stat-handle">@<span data-stat="handle">shivanshshrma</span> · <span class="stat-tier" data-stat="tier">—</span></span>
+          <div class="stat-figures">
+            <div class="stat"><span class="stat-num" data-stat="rating">—</span><span class="stat-label">rating</span></div>
+            <div class="stat"><span class="stat-num" data-stat="contests">—</span><span class="stat-label">contests</span></div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ---------- Experience ---------- -->
+    <section id="experience" class="section">
+      <p class="eyebrow reveal">// experience</p>
+      <h2 class="section-title reveal">Where I've worked</h2>
+
+      <div class="work-list">
+
+        <article class="project reveal">
+          <span class="project-index">01</span>
+          <div class="project-body">
+            <h3 class="project-title">
+              Software Developer — GXCO Tech Pvt. Ltd.
+            </h3>
+            <p class="project-desc" style="margin-bottom: 1rem;">
+              Led development of fintech-grade integrations and Python-driven financial workflows on the Frappe framework:
+            </p>
+            <ul class="experience-bullets" style="list-style-type: disc; margin-left: 1.25rem; margin-bottom: 1.5rem; color: var(--muted); font-size: 0.95rem; line-height: 1.6;">
+              <li style="margin-bottom: 0.5rem;"><strong>Financial APIs &amp; Workflows:</strong> Designed and built a multi-level expense approval pipeline (reducing processing time by 40%) and auto-routed approved payments to banking systems.</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Payment Automation:</strong> Engineered end-to-end reimbursement cycle automation for real-time vendor and employee bank API payment routing.</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Algorithms:</strong> Designed a custom Leave Allocation Algorithm with 100% accrual accuracy for 100+ employees.</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Database Operations:</strong> Managed multi-tenant MariaDB (MySQL-compatible) instances directly, resolved inconsistencies via SQL migrations, and authored custom financial reports.</li>
+              <li style="margin-bottom: 0.5rem;"><strong>AI Productivity:</strong> Integrated GitHub Copilot and LLM reviews (ChatGPT, Claude) to accelerate feature delivery and improve code quality.</li>
             </ul>
-        </section>
-        <section id="projects">
-            <h2>My Projects</h2>
+            <p class="project-meta">Sep 2025 – Present · Remote, India · Python · Frappe · MariaDB · REST · Git</p>
+          </div>
+        </article>
 
-            <h3>AI-Driven Adaptive Cloud Resource Manager</h3>
-            <p><strong>Technologies:</strong> AWS, Python, SQL, TensorFlow</p>
+      </div>
+    </section>
+
+    <!-- ---------- Projects ---------- -->
+    <section id="projects" class="section">
+      <p class="eyebrow reveal">// selected projects</p>
+      <h2 class="section-title reveal">Things I've built</h2>
+
+      <div class="work-list">
+
+        <article class="project reveal">
+          <span class="project-index">01</span>
+          <div class="project-body">
+            <h3 class="project-title">
+              <a href="https://github.com/shivnshshrma" target="_blank" rel="noopener">Expense Splitting REST API</a>
+            </h3>
+            <p class="project-desc">
+              A Splitwise-style backend with endpoints for group management,
+              multi-way expense splitting (equal, percentage, exact), and real-time balance calculation.
+              Designed to handle concurrent writes correctly. Caches balance state in Redis for microsecond
+              reads and uses Celery for async notification dispatch.
+            </p>
+            <p class="project-meta">Ongoing · Python (FastAPI) · PostgreSQL · Redis · Celery · Docker · pytest</p>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <span class="project-index">02</span>
+          <div class="project-body">
+            <h3 class="project-title">
+              <a href="https://github.com/shivnshshrma" target="_blank" rel="noopener">AI-Driven Adaptive Cloud Resource Manager</a>
+            </h3>
+            <p class="project-desc">
+              A Python REST API serving 500+ concurrent users with sub-500ms response times.
+              Uses DynamoDB for low-latency state storage, tracks throughput/latency via CloudWatch with SLA alarms,
+              and reduces idle-resource operational costs by 18% using dynamic EC2 scaling.
+            </p>
+            <p class="project-meta">Jan 2025 – Apr 2025 · Python · AWS (EC2, S3, CloudWatch, DynamoDB) · Docker · TensorFlow</p>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <span class="project-index">03</span>
+          <div class="project-body">
+            <h3 class="project-title">
+              <a href="https://github.com/shivnshshrma" target="_blank" rel="noopener">Automated Continuous Delivery Pipeline</a>
+            </h3>
+            <p class="project-desc">
+              End-to-end CI/CD pipeline automating build, test, and deploy stages.
+              Integrates SonarQube quality gates to block coverage regressions, and utilizes Docker
+              to eliminate environment drift, accelerating release velocity by 30%.
+            </p>
+            <p class="project-meta">Feb 2024 – Apr 2024 · Jenkins · Docker · GitHub Actions · AWS · SonarQube · Bash</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ---------- About ---------- -->
+    <section id="about" class="section">
+      <p class="eyebrow reveal">// about</p>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <h2 class="section-title">A bit about me</h2>
+          <p>
+            I'm a backend-leaning software developer with production experience
+            building Python systems, REST APIs, and financial workflows — payment
+            routing, multi-level approvals, and multi-tenant data. I'm comfortable
+            reasoning about distributed systems, reliability, and failure modes at
+            scale.
+          </p>
+          <p>
+            I work across the whole pipeline, from database design and SQL
+            migrations through to CI/CD and cloud infrastructure, and I use AI dev
+            tools (Copilot, Cursor, Claude) daily to ship faster without cutting
+            corners. I'm looking for a software development role where I can build
+            things that matter.
+          </p>
+        </div>
+
+        <div class="skills reveal">
+          <div class="skill-group">
+            <h4>Languages</h4>
             <ul>
-                <li>Developed an intelligent system that dynamically allocates cloud resources based on real-time demand
-                    patterns.</li>
-                <li>Reduced operational costs by 18% through predictive scaling and automated resource optimization.
-                </li>
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>SQL</li>
+              <li>Bash</li>
             </ul>
-
-            <h3>Automated Continuous Delivery Pipeline</h3>
-            <p><strong>Technologies:</strong> Jenkins, Docker, AWS, Bash</p>
+          </div>
+          <div class="skill-group">
+            <h4>Backend &amp; APIs</h4>
             <ul>
-                <li>Built a fully automated CI/CD pipeline that streamlined code deployment from development to
-                    production.</li>
-                <li>Accelerated release cycles by 30%, enabling faster feature delivery and improved team productivity.
-                </li>
+              <li>REST API design</li>
+              <li>Distributed services</li>
+              <li>Multi-tenant architecture</li>
             </ul>
-        </section>
-        <section id="skills">
-            <h2>My Skills</h2>
+          </div>
+          <div class="skill-group">
+            <h4>Data &amp; Cloud</h4>
             <ul>
-                <li><strong>Programming Languages:</strong> Python, JavaScript, SQL, Bash</li>
-                <li><strong>Cloud Platforms:</strong> AWS (EC2, S3, Lambda, RDS), Google Cloud Platform (GCP)</li>
-                <li><strong>DevOps & Tools:</strong> Docker, Jenkins, Git, CI/CD Pipelines</li>
-                <li><strong>Frameworks & Technologies:</strong> Frappe, REST APIs, TensorFlow</li>
-                <li><strong>Specializations:</strong> Distributed Systems, Infrastructure Engineering, Database
-                    Management</li>
+              <li>MySQL / MariaDB</li>
+              <li>PostgreSQL</li>
+              <li>Redis</li>
+              <li>DynamoDB</li>
+              <li>AWS</li>
+              <li>GCP</li>
             </ul>
-        </section>
-        <section id="education">
-            <h2>My Education</h2>
-            <h3>Chandigarh University</h3>
-            <p><strong>Bachelor of Engineering in Computer Science and Engineering</strong></p>
-            <p>2021 - 2025</p>
-
-            <h3>Certifications</h3>
+          </div>
+          <div class="skill-group">
+            <h4>DevOps &amp; AI</h4>
             <ul>
-                <li><strong>Oracle Cloud Infrastructure 2025 Certified DevOps Professional</strong> - Oracle (2025)</li>
-                <li><strong>Google Associate Cloud Engineer</strong> - Google Cloud (2024)</li>
-                <li><strong>IBM Cloud Computing</strong> - IBM (2024)</li>
+              <li>Docker</li>
+              <li>Git</li>
+              <li>GitHub Actions</li>
+              <li>Jenkins</li>
+              <li>SonarQube</li>
+              <li>Copilot · Cursor · Claude</li>
             </ul>
-        </section>
+          </div>
+        </div>
+      </div>
 
-        <!-- GitHub Stats Section -->
-        <section id="achievements" class="stats-section">
-            <h2><i class="fab fa-github"></i> GitHub Statistics</h2>
-            
-            <div class="loading" id="github-loading">
-                <div class="spinner"></div>
-                <p>Loading GitHub stats...</p>
-            </div>
+      <!-- Education + certifications -->
+      <div class="credentials reveal">
+        <div class="skill-group">
+          <h4>Education</h4>
+          <ul>
+            <li>B.E. Computer Science &amp; Engineering</li>
+            <li class="cred-detail">Chandigarh University · 2021–2025 · Mohali, Punjab</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Certifications</h4>
+          <ul>
+            <li>Google — Associate Cloud Engineer</li>
+            <li>Oracle — OCI 2025 Certified DevOps Professional</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-            <div id="github-error" class="error-message" style="display: none;">
-                <i class="fas fa-exclamation-circle"></i>
-                <p>Failed to load GitHub stats. Please try again later.</p>
-            </div>
+    <!-- ---------- Contact ---------- -->
+    <section id="contact" class="section">
+      <p class="eyebrow reveal">// contact</p>
+      <h2 class="section-title contact-title reveal">Let's work together.</h2>
+      <p class="contact-intro reveal">
+        Looking for a software developer who ships reliable systems? My inbox is
+        always open.
+      </p>
+      <a href="mailto:shivnshshrma@gmail.com" class="contact-email reveal">shivnshshrma@gmail.com</a>
 
-            <div id="github-content" style="display: none;">
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
-                        <div class="stat-value" id="total-repos">-</div>
-                        <div class="stat-label">Public Repositories</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-star"></i></div>
-                        <div class="stat-value" id="total-stars">-</div>
-                        <div class="stat-label">Total Stars</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-code-pull-request"></i></div>
-                        <div class="stat-value" id="total-prs">-</div>
-                        <div class="stat-label">Pull Requests</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
-                        <div class="stat-value" id="merged-prs">-</div>
-                        <div class="stat-label">Merged PRs</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-code-commit"></i></div>
-                        <div class="stat-value" id="total-commits">-</div>
-                        <div class="stat-label">Total Commits</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-fire"></i></div>
-                        <div class="stat-value" id="current-streak">-</div>
-                        <div class="stat-label">Current Streak (days)</div>
-                    </div>
-                </div>
+      <ul class="socials reveal">
+        <li><a href="https://github.com/shivnshshrma" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/shivanshshrma" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </section>
+  </main>
 
-                <div class="contribution-graph">
-                    <h3>Contribution Activity</h3>
-                    <img id="contribution-chart" alt="GitHub Contribution Graph" />
-                </div>
+  <footer class="site-footer">
+    <span>© <span id="year"></span> Shivansh Kumar</span>
+    <span class="footer-note">Built from scratch.</span>
+  </footer>
 
-                <div class="recent-activity">
-                    <h3>Recent Activity</h3>
-                    <div id="recent-events" class="events-list"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Competitive Programming Stats Section -->
-        <section id="cp-stats" class="stats-section">
-            <h2><i class="fas fa-trophy"></i> Competitive Programming</h2>
-            
-            <!-- CodeChef Stats -->
-            <div class="cp-platform">
-                <h3><i class="fas fa-code"></i> CodeChef</h3>
-                
-                <div class="loading" id="codechef-loading">
-                    <div class="spinner"></div>
-                    <p>Loading CodeChef stats...</p>
-                </div>
-
-                <div id="codechef-error" class="error-message" style="display: none;">
-                    <i class="fas fa-exclamation-circle"></i>
-                    <p>Failed to load CodeChef stats. Please check your username.</p>
-                </div>
-
-                <div id="codechef-content" style="display: none;">
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-icon"><i class="fas fa-star"></i></div>
-                            <div class="stat-value" id="cc-rating">-</div>
-                            <div class="stat-label">Current Rating</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon"><i class="fas fa-medal"></i></div>
-                            <div class="stat-value" id="cc-rank">-</div>
-                            <div class="stat-label">Global Rank</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
-                            <div class="stat-value" id="cc-max-rating">-</div>
-                            <div class="stat-label">Max Rating</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon"><i class="fas fa-flag-checkered"></i></div>
-                            <div class="stat-value" id="cc-problems">-</div>
-                            <div class="stat-label">Problems Solved</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CodeForces Stats -->
-            <div class="cp-platform">
-                <h3><i class="fas fa-code"></i> CodeForces</h3>
-                
-                <div class="loading" id="codeforces-loading">
-                    <div class="spinner"></div>
-                    <p>Loading CodeForces stats...</p>
-                </div>
-
-                <div id="codeforces-error" class="error-message" style="display: none;">
-                    <i class="fas fa-exclamation-circle"></i>
-                    <p>Failed to load CodeForces stats. Please check your username.</p>
-                </div>
-
-                <div id="codeforces-content" style="display: none;">
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-icon"><i class="fas fa-star"></i></div>
-                            <div class="stat-value" id="cf-rating">-</div>
-                            <div class="stat-label">Current Rating</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon"><i class="fas fa-medal"></i></div>
-                            <div class="stat-value" id="cf-rank">-</div>
-                            <div class="stat-label">Rank</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
-                            <div class="stat-value" id="cf-max-rating">-</div>
-                            <div class="stat-label">Max Rating</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon"><i class="fas fa-trophy"></i></div>
-                            <div class="stat-value" id="cf-contests">-</div>
-                            <div class="stat-label">Contests Participated</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <script src="github-stats.js"></script>
-    <script src="cp-stats.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
